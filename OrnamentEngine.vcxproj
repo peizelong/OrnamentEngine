@@ -90,7 +90,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\mian.cpp" />
+    <ClCompile Include="Source\RHI\instance.cpp" />
+    <ClCompile Include="Source\RHI\RHI.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\core\global.h" />
+    <ClInclude Include="Source\RHI\instance.h" />
+    <ClInclude Include="Source\RHI\RHI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
