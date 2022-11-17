@@ -90,11 +90,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\RHI\devices.cpp" />
     <ClCompile Include="Source\RHI\instance.cpp" />
     <ClCompile Include="Source\RHI\RHI.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\core\tools.h" />
+    <ClInclude Include="Source\RHI\devices.h" />
     <ClInclude Include="Source\core\global.h" />
     <ClInclude Include="Source\RHI\instance.h" />
     <ClInclude Include="Source\RHI\RHI.h" />

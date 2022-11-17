@@ -1,5 +1,6 @@
 #include "instance.h"
 namespace OE {
+#ifdef OE_VALIDATION_DEBUG
 	VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger) {
 		auto func = (PFN_vkCreateDebugUtilsMessengerEXT)vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
 		if (func != nullptr) {
@@ -25,11 +26,15 @@ namespace OE {
 
 		return VK_FALSE;
 	}
+#endif // OE_VALIDATION_DEBUG
+
 
 	VulkanInstance::~VulkanInstance()
 	{
-		if (enableDebug)
+#ifdef OE_VALIDATION_DEBUG
 			DestroyDebugUtilsMessengerEXT(instance,  debugMessenger,nullptr );
+#endif // OE_VALIDATION_DEBUG
+
 		if(instance!=VK_NULL_HANDLE)
 			vkDestroyInstance(instance, nullptr);
 	}
@@ -45,19 +50,19 @@ namespace OE {
 		appInfo.pApplicationName = AppName.c_str();
 		appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
 		
-
+#ifdef OE_VALIDATION_DEBUG
 		VkDebugUtilsMessengerCreateInfoEXT debugInfo{};
-		if (enableDebug) {
-			ExtensionNames.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
-			LayerNames.push_back("VK_LAYER_KHRONOS_validation");
-			debugInfo.sType = VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;
-			debugInfo.messageSeverity = VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT;
-			debugInfo.messageType = VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT;
-			debugInfo.pfnUserCallback = debugCallback;
-			debugInfo.pUserData = nullptr; 
+		ExtensionNames.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
+		LayerNames.push_back("VK_LAYER_KHRONOS_validation");
+		debugInfo.sType = VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;
+		debugInfo.messageSeverity = VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT;
+		debugInfo.messageType = VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT;
+		debugInfo.pfnUserCallback = debugCallback;
+		debugInfo.pUserData = nullptr; 
 
-			instanceInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugInfo;
-		}
+		instanceInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&debugInfo;
+#endif // OE_VALIDATION_DEBUG
+		
 		//查询层是否可用
 		uint32_t layerCount;
 		vkEnumerateInstanceLayerProperties(&layerCount, nullptr);
@@ -90,8 +95,10 @@ namespace OE {
 		if (vkCreateInstance(&instanceInfo, nullptr, &instance) != VK_SUCCESS) {
 			throw std::runtime_error("instance 创建失败");
 		}
+#ifdef OE_VALIDATION_DEBUG
 		if (CreateDebugUtilsMessengerEXT(instance, &debugInfo, nullptr, &debugMessenger) != VK_SUCCESS) {
 			throw std::runtime_error("failed to set up debug messenger!");
 		}
+#endif // DEBUG
 	}
 }

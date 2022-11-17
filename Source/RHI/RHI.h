@@ -1,4 +1,5 @@
 #pragma once
+#include<iostream>
 #include"instance.h"
 namespace OE {
 	class RHI
@@ -6,5 +7,13 @@ namespace OE {
 		
 	public:
 		~RHI();
+
+
+
+	private:
+		VulkanInstance _instance{};
+	
 	};
+
+
 }
