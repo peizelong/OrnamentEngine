@@ -91,14 +91,10 @@ namespace OE {
 		instanceInfo.ppEnabledLayerNames = LayerNames.data();
 
 
+		VKRESULT(vkCreateInstance(&instanceInfo, nullptr, &instance))
 
-		if (vkCreateInstance(&instanceInfo, nullptr, &instance) != VK_SUCCESS) {
-			throw std::runtime_error("instance ´´½¨Ê§°Ü");
-		}
 #ifdef OE_VALIDATION_DEBUG
-		if (CreateDebugUtilsMessengerEXT(instance, &debugInfo, nullptr, &debugMessenger) != VK_SUCCESS) {
-			throw std::runtime_error("failed to set up debug messenger!");
-		}
+		VKRESULT(CreateDebugUtilsMessengerEXT(instance, &debugInfo, nullptr, &debugMessenger))
 #endif // DEBUG
 	}
 }

@@ -27,6 +27,9 @@
     <ClCompile Include="Source\RHI\devices.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\tools\log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\RHI\RHI.h">
@@ -41,7 +44,10 @@
     <ClInclude Include="Source\RHI\devices.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Source\core\tools.h">
+    <ClInclude Include="Source\tools\tools.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\tools\log.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
