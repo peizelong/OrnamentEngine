@@ -18,16 +18,16 @@
     <ClCompile Include="Source\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Source\RHI\RHI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\RHI\instance.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\RHI\devices.cpp">
+    <ClCompile Include="Source\RHI\VulkanRHI.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Source\tools\log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RHI\VulkanRHI.h">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RHI\RHIStruct.h">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,13 +35,7 @@
     <ClInclude Include="Source\RHI\RHI.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Source\RHI\instance.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Source\core\global.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\RHI\devices.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Source\tools\tools.h">

@@ -1,17 +1,16 @@
 #pragma once
 #include<iostream>
-#include"instance.h"
+
 namespace OE {
 	class RHI
 	{
 		
 	public:
 		~RHI();
-
+		virtual	void init()=0;
 
 
 	private:
-		VulkanInstance _instance{};
 	
 	};
 
