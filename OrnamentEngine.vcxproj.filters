@@ -15,34 +15,37 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\core\RHI\interface\RHI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\RHI\RHIStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\RHI\VulkanRHI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\tools\log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\tools\tools.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\core\engine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\core\tools\log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\core\engine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="Source\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Source\RHI\VulkanRHI.cpp">
+    <ClCompile Include="Source\core\RHI\VulkanRHI.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Source\tools\log.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\RHI\VulkanRHI.h">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\RHI\RHIStruct.h">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Source\RHI\RHI.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\core\global.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\tools\tools.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\tools\log.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,7 +6,6 @@ namespace OE {
 	{
 		
 	public:
-		~RHI();
 		virtual	void init()=0;
 
 

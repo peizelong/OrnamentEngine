@@ -10,6 +10,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\core\engine.h" />
+    <ClInclude Include="Source\core\RHI\interface\RHI.h" />
+    <ClInclude Include="Source\core\RHI\RHIStruct.h" />
+    <ClInclude Include="Source\core\RHI\VulkanRHI.h" />
+    <ClInclude Include="Source\core\tools\log.h" />
+    <ClInclude Include="Source\core\tools\tools.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\core\engine.cpp" />
+    <ClCompile Include="Source\core\RHI\VulkanRHI.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\core\tools\log.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -59,6 +73,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -78,6 +93,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -89,19 +105,6 @@
       <ProgramDatabaseFile>$(SolutionDir)bin\int\$(ProjectName)-$(Configuration)$(Platform)\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Source\RHI\RHIStruct.h" />
-    <ClCompile Include="Source\RHI\VulkanRHI.h" />
-    <ClCompile Include="Source\tools\log.cpp" />
-    <ClCompile Include="Source\RHI\VulkanRHI.cpp" />
-    <ClCompile Include="Source\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Source\tools\log.h" />
-    <ClInclude Include="Source\tools\tools.h" />
-    <ClInclude Include="Source\core\global.h" />
-    <ClInclude Include="Source\RHI\RHI.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
