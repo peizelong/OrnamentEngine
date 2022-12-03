@@ -24,6 +24,10 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\core\tools\log.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\core\shaders\shader.frag" />
+    <None Include="Source\core\shaders\shader.vert" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
