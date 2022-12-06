@@ -49,7 +49,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\core\shaders\shader.vert" />
-    <None Include="Source\core\shaders\shader.frag" />
+    <None Include="Source\shaders\shader.vert" />
+    <None Include="Source\shaders\shader.frag" />
   </ItemGroup>
 </Project>

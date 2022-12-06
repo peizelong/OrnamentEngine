@@ -25,8 +25,8 @@
     <ClCompile Include="Source\core\tools\log.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\core\shaders\shader.frag" />
-    <None Include="Source\core\shaders\shader.vert" />
+    <None Include="Source\shaders\shader.frag" />
+    <None Include="Source\shaders\shader.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
